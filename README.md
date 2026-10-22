@@ -34,7 +34,7 @@ ffmpeg -y -framerate 30 -start_number 0 -i /tmp/jig-frames/%04d.jpg \
 
 The file in `media/` includes a quiet mechanical bed mixed under the picture. An image-only encode replaces that bed. Use `-movflags +faststart` so browsers can seek. GitHub Pages answers byte ranges. Python's `http.server` does not, so chapter seeks fail on that server.
 
-`puppeteer-core` drives the installed Chrome. It is a capture tool, not a page dependency. The page itself is static HTML, one canvas script, self-hosted OFL fonts, and the video. The renderer is canvas, not a timeline library, because the door move has to start at frame 151 and finish at frame 175.
+To recapture frames, install `puppeteer-core` locally and point it at the Chrome already on the machine. That package is a capture tool. It is not committed, and it is not loaded by the page. The page itself is static HTML, one canvas script, self-hosted OFL fonts, and the video. The renderer is canvas, not a timeline library, because the door move has to start at frame 151 and finish at frame 175.
 
 ## Fonts
 
