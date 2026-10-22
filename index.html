@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gen-V Anatomy Jig</title>
+  <meta name="description" content="A 34-second schematic anatomy jig of a fifth-generation stealth fighter: skin separation, belly-bay trapeze deployment, and 2D pitch-vector nozzles. 1,020 frames at 30 fps.">
+  <link rel="canonical" href="https://mizcausevic-dev.github.io/gen-v-stealth-anatomy-jig/">
+  <meta property="og:title" content="Gen-V Anatomy Jig">
+  <meta property="og:description" content="34 seconds. Skin lifts, the bay trapeze pushes an AIM-120 class store into the slipstream, and flat nozzles pitch 20 degrees.">
+  <meta property="og:type" content="video.other">
+  <meta property="og:url" content="https://mizcausevic-dev.github.io/gen-v-stealth-anatomy-jig/">
+  <meta property="og:image" content="https://mizcausevic-dev.github.io/gen-v-stealth-anatomy-jig/media/poster-Cursor.jpg">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect fill='%2305060a' width='32' height='32'/%3E%3Cpath d='M4 18 L16 8 L28 18 L22 18 L22 24 L10 24 L10 18 Z' fill='%2300B4D8'/%3E%3C/svg%3E">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    "name": "Gen-V Anatomy Jig",
+    "description": "A 34-second schematic of a fifth-generation stealth fighter. Skin panels lift, a trapeze deploys an AIM-120 class store, and flat nozzles pitch 20 degrees. Not an engineering drawing.",
+    "thumbnailUrl": "https://mizcausevic-dev.github.io/gen-v-stealth-anatomy-jig/media/poster-Cursor.jpg",
+    "uploadDate": "2026-10-22",
+    "duration": "PT34S",
+    "contentUrl": "https://mizcausevic-dev.github.io/gen-v-stealth-anatomy-jig/media/stealth-anatomy-jig-Cursor.mp4",
+    "embedUrl": "https://mizcausevic-dev.github.io/gen-v-stealth-anatomy-jig/",
+    "publisher": { "@type": "Organization", "name": "Kinetic Gain", "url": "https://kineticgain.com" }
+  }
+  </script>
+  <style>
+    @font-face { font-family: Inter; src: url("fonts/Inter-Regular.ttf") format("truetype"); font-weight: 400; font-display: swap; }
+    @font-face { font-family: Inter; src: url("fonts/Inter-Medium.ttf") format("truetype"); font-weight: 500; font-display: swap; }
+    @font-face { font-family: Inter; src: url("fonts/Inter-SemiBold.ttf") format("truetype"); font-weight: 600; font-display: swap; }
+    @font-face { font-family: Inter; src: url("fonts/Inter-Bold.ttf") format("truetype"); font-weight: 700; font-display: swap; }
+    @font-face { font-family: "JetBrains Mono"; src: url("fonts/JetBrainsMono-Regular.ttf") format("truetype"); font-weight: 400; font-display: swap; }
+    @font-face { font-family: "JetBrains Mono"; src: url("fonts/JetBrainsMono-Medium.ttf") format("truetype"); font-weight: 500; font-display: swap; }
+    :root { --ink:#07080a; --bone:#E7E4DC; --mute:#8B939C; --blue:#00B4D8; --gold:#F77F00; --emerald:#2A9D8F; --line:rgba(255,255,255,.08); }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin:0; background:var(--ink); color:var(--bone); font-family:Inter,"Segoe UI",sans-serif; line-height:1.45; }
+    body::before { content:""; pointer-events:none; position:fixed; inset:0; background-image:radial-gradient(rgba(255,255,255,.045) 1px, transparent 1px); background-size:22px 22px; mask-image:radial-gradient(circle at 50% 30%, #000 20%, transparent 75%); }
+    a { color:var(--blue); }
+    .wrap { width:min(1180px, calc(100% - 40px)); margin:0 auto; position:relative; }
+    header { padding:48px 0 20px; }
+    .kicker { font-family:"JetBrains Mono",ui-monospace,monospace; font-size:12px; letter-spacing:.16em; color:var(--emerald); margin:0 0 14px; }
+    h1 { font-weight:600; font-size:clamp(40px, 6vw, 76px); letter-spacing:-.03em; line-height:.92; margin:0 0 16px; }
+    h1 span { display:block; color:var(--blue); }
+    .lede { max-width:62ch; color:var(--mute); font-size:18px; margin:0; }
+    .theater { margin:28px 0 0; background:#05060a; border:1px solid var(--line); position:relative; padding:18px 18px 14px; }
+    .theater::before, .theater::after { content:""; position:absolute; width:28px; height:28px; border:1.5px solid var(--emerald); pointer-events:none; }
+    .theater::before { top:8px; left:8px; border-right:0; border-bottom:0; }
+    .theater::after { bottom:8px; right:8px; border-left:0; border-top:0; }
+    video { display:block; width:100%; height:auto; background:#000; aspect-ratio:16/9; }
+    .chapters { display:flex; flex-wrap:wrap; gap:8px; margin-top:12px; }
+    .chapters button, .transport button, .unmute { font-family:"JetBrains Mono",ui-monospace,monospace; font-size:12px; color:var(--bone); background:transparent; border:1px solid var(--line); padding:8px 10px; cursor:pointer; }
+    .chapters button[aria-current="true"], .chapters button:hover, .transport button:hover, .unmute:hover { border-color:var(--blue); color:var(--blue); }
+    .unmute { margin-left:auto; }
+    .bar { display:flex; align-items:center; gap:8px; margin-top:8px; flex-wrap:wrap; }
+    .marquee { margin:22px 0; overflow:hidden; border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
+    .marquee-track { display:flex; width:max-content; animation:marquee 28s linear infinite; font-family:"JetBrains Mono",ui-monospace,monospace; font-size:13px; letter-spacing:.14em; color:var(--mute); padding:12px 0; }
+    .marquee-track span { padding-right:28px; }
+    .marquee-track em { font-style:normal; color:var(--gold); }
+    @keyframes marquee { from { transform:translateX(0); } to { transform:translateX(-50%); } }
+    section { position:relative; padding:10px 0 28px; }
+    h2 { font-size:22px; font-weight:600; letter-spacing:-.02em; margin:0 0 8px; }
+    .note { color:var(--mute); max-width:70ch; }
+    #jig { width:100%; height:auto; background:#05060a; border:1px solid var(--line); display:block; }
+    .transport { display:flex; flex-wrap:wrap; gap:8px; align-items:center; margin-top:10px; }
+    input[type="range"] { flex:1; min-width:180px; accent-color:var(--blue); }
+    .frame-read { font-family:"JetBrains Mono",ui-monospace,monospace; font-size:12px; color:var(--mute); min-width:9ch; }
+    .grid { display:grid; grid-template-columns:1.2fr .8fr; gap:28px; }
+    table { width:100%; border-collapse:collapse; font-family:"JetBrains Mono",ui-monospace,monospace; font-size:13px; }
+    th, td { text-align:left; padding:8px 0; border-bottom:1px solid var(--line); font-weight:400; vertical-align:top; }
+    th { color:var(--mute); font-size:11px; letter-spacing:.12em; }
+    .swatches { display:flex; flex-direction:column; gap:8px; }
+    .sw { display:flex; align-items:center; gap:10px; font-family:"JetBrains Mono",ui-monospace,monospace; font-size:13px; }
+    .sw i { width:18px; height:18px; display:block; border:1px solid rgba(255,255,255,.3); }
+    footer { padding:10px 0 48px; color:var(--mute); font-size:13px; }
+    @media (max-width:800px) { .grid { grid-template-columns:1fr; } header { padding-top:28px; } .wrap { width:min(1180px, calc(100% - 24px)); } }
+    @media (prefers-reduced-motion:reduce) {
+      html { scroll-behavior:auto; }
+      .marquee-track { animation:none; }
+      *, *::before, *::after { animation-duration:.001ms !important; animation-iteration-count:1 !important; transition-duration:.001ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <p class="kicker">KINETIC GAIN  /  SYSTEMS JIG  /  30 FPS</p>
+      <h1>Gen-V anatomy jig<span>Bay trapeze. 2D vector.</span></h1>
+      <p class="lede">A 34-second schematic of a fifth-generation stealth fighter. Skin panels lift, belly doors open on hydraulic actuators, a trapeze pushes an AIM-120 class missile into the slipstream, and flat nozzles pitch 20 degrees. This is a motion study, not an engineering drawing and not a measured airframe.</p>
+    </header>
+    <figure class="theater">
+      <video id="film" poster="media/poster-Cursor.jpg" controls playsinline preload="metadata">
+        <source src="media/stealth-anatomy-jig-Cursor.mp4" type="video/mp4">
+        <track kind="captions" src="media/captions-Cursor.vtt" srclang="en" label="English">
+      </video>
+      <div class="bar">
+        <div class="chapters" role="group" aria-label="Film chapters">
+          <button type="button" data-t="0">00:00 Skin</button>
+          <button type="button" data-t="5">00:05 Doors</button>
+          <button type="button" data-t="10">00:10 Trapeze</button>
+          <button type="button" data-t="17">00:17 Nozzles</button>
+          <button type="button" data-t="25">00:25 Combat lock</button>
+        </div>
+        <button type="button" class="unmute" id="unmute">Sound on</button>
+      </div>
+    </figure>
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span>RAM SKIN #121316</span><span>TITANIUM #2F323A</span><span><em>HYDRAULIC #F77F00</em></span><span>GUIDE RAIL #2A9D8F</span><span>AFTERBURNER #00B4D8</span><span>1020 FRAMES</span><span>34.0 SECONDS</span>
+        <span>RAM SKIN #121316</span><span>TITANIUM #2F323A</span><span><em>HYDRAULIC #F77F00</em></span><span>GUIDE RAIL #2A9D8F</span><span>AFTERBURNER #00B4D8</span><span>1020 FRAMES</span><span>34.0 SECONDS</span>
+      </div>
+    </div>
+    <section>
+      <h2>Frame jig</h2>
+      <p class="note">The same renderer that printed the film. Scrub any of the 1,020 frames. The hosted video is the master clock.</p>
+      <canvas id="jig" width="1920" height="1080" aria-label="Interactive frame of the anatomy jig"></canvas>
+      <div class="transport">
+        <button type="button" id="play">Play jig</button>
+        <input id="scrub" type="range" min="0" max="1019" value="470" aria-label="Frame scrubber">
+        <span class="frame-read" id="frameRead">F 0470</span>
+      </div>
+    </section>
+    <section class="grid">
+      <div>
+        <h2>Clock</h2>
+        <table>
+          <thead><tr><th>Frames</th><th>Time</th><th>Move</th></tr></thead>
+          <tbody>
+            <tr><td>0–149</td><td>0.0–5.0s</td><td>High forward three-quarter. Panels lift.</td></tr>
+            <tr><td>150–299</td><td>5.0–10.0s</td><td>Under the belly. Doors move on frames 151–175.</td></tr>
+            <tr><td>300–509</td><td>10.0–17.0s</td><td>Trapeze runs the store out along the rails.</td></tr>
+            <tr><td>510–749</td><td>17.0–25.0s</td><td>Nozzle orbit. Flaps reach 20 degrees of pitch.</td></tr>
+            <tr><td>750–1019</td><td>25.0–34.0s</td><td>Pull back. Surfaces, vector, and bypass lock.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div>
+        <h2>Grade</h2>
+        <div class="swatches">
+          <div class="sw"><i style="background:#121316"></i> RAM skin #121316</div>
+          <div class="sw"><i style="background:#2F323A"></i> Titanium #2F323A</div>
+          <div class="sw"><i style="background:#F77F00"></i> Hydraulic gold #F77F00</div>
+          <div class="sw"><i style="background:#2A9D8F"></i> Rail emerald #2A9D8F</div>
+          <div class="sw"><i style="background:#00B4D8"></i> Afterburner blue #00B4D8</div>
+        </div>
+        <p class="note">The void behind the jet is darker than the skin so the silhouette holds. Pigment values above are the material colors in the model.</p>
+      </div>
+    </section>
+    <footer>
+      <p>Schematic motion study by Kinetic Gain. No measured loft, no classified geometry, no seeker or warhead interior. The missile is an external AIM-120 class form on a trapeze. Shock-diamond pulse stays under three flashes a second and is limited to the plume.</p>
+    </footer>
+  </div>
+  <script src="jig.js"></script>
+  <script>
+    const film = document.getElementById("film");
+    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const chapters = [...document.querySelectorAll(".chapters button")];
+    const cuts = [0, 5, 10, 17, 25, 34];
+    film.muted = true;
+    if (!reduce) film.play().catch(function () {});
+    document.getElementById("unmute").addEventListener("click", function () {
+      film.muted = !film.muted;
+      this.textContent = film.muted ? "Sound on" : "Sound off";
+      if (!film.muted) film.play().catch(function () {});
+    });
+    function mark(t) {
+      let idx = 0;
+      for (let i = 0; i < cuts.length - 1; i++) if (t >= cuts[i]) idx = i;
+      chapters.forEach(function (b, i) { b.setAttribute("aria-current", i === idx ? "true" : "false"); });
+    }
+    chapters.forEach(function (b) {
+      b.addEventListener("click", function () {
+        const t = Number(b.dataset.t);
+        film.currentTime = t;
+        mark(t);
+        film.play().catch(function () {});
+        const frame = Math.round(t * 30);
+        scrub.value = String(frame);
+        paint(frame);
+      });
+    });
+    film.addEventListener("timeupdate", function () { mark(film.currentTime); });
+    mark(0);
+    const canvas = document.getElementById("jig");
+    const scrub = document.getElementById("scrub");
+    const read = document.getElementById("frameRead");
+    const playBtn = document.getElementById("play");
+    let playing = false, raf = 0, origin = 470, started = 0;
+    function paint(frame) {
+      frame = Math.max(0, Math.min(1019, frame | 0));
+      if (window.Jig) window.Jig.renderFrame(frame, canvas);
+      read.textContent = "F " + String(frame).padStart(4, "0");
+      scrub.value = String(frame);
+    }
+    function loop(now) {
+      if (!playing) return;
+      paint((origin + Math.floor((now - started) / (1000 / 30))) % 1020);
+      raf = requestAnimationFrame(loop);
+    }
+    playBtn.addEventListener("click", function () {
+      playing = !playing;
+      playBtn.textContent = playing ? "Pause jig" : "Play jig";
+      if (playing) { origin = Number(scrub.value); started = performance.now(); raf = requestAnimationFrame(loop); }
+      else cancelAnimationFrame(raf);
+    });
+    scrub.addEventListener("input", function () {
+      playing = false; playBtn.textContent = "Play jig"; cancelAnimationFrame(raf); paint(Number(scrub.value));
+    });
+    document.fonts.ready.then(function () { paint(470); });
+  </script>
+</body>
+</html>

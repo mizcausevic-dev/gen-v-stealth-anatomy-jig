@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Gen-V anatomy jig frame</title>
+  <style>
+    @font-face { font-family: Inter; src: url("fonts/Inter-Regular.ttf") format("truetype"); font-weight: 400; font-display: block; }
+    @font-face { font-family: Inter; src: url("fonts/Inter-SemiBold.ttf") format("truetype"); font-weight: 600; font-display: block; }
+    @font-face { font-family: Inter; src: url("fonts/Inter-Bold.ttf") format("truetype"); font-weight: 700; font-display: block; }
+    @font-face { font-family: "JetBrains Mono"; src: url("fonts/JetBrainsMono-Regular.ttf") format("truetype"); font-weight: 400; font-display: block; }
+    @font-face { font-family: "JetBrains Mono"; src: url("fonts/JetBrainsMono-Medium.ttf") format("truetype"); font-weight: 500; font-display: block; }
+    html, body { margin: 0; background: #05060a; overflow: hidden; }
+    canvas { display: block; width: 1920px; height: 1080px; }
+  </style>
+</head>
+<body>
+  <canvas id="viewport" width="1920" height="1080"></canvas>
+  <script src="jig.js"></script>
+  <script>
+    const canvas = document.getElementById("viewport");
+    const q = new URLSearchParams(location.search);
+    async function boot() {
+      await document.fonts.load("600 54px Inter");
+      await document.fonts.load("500 18px 'JetBrains Mono'");
+      await document.fonts.ready;
+      if (q.has("frame")) window.Jig.renderFrame(Number(q.get("frame")), canvas);
+      window.__jigReady = true;
+    }
+    boot();
+  </script>
+</body>
+</html>
